@@ -31,16 +31,22 @@ public class syilonCore {
     
     
     public boolean isDesignatedTarget() {
-        //returns true if players online is over 15
+	//Relies on PlayerHandler import
+        if PlayerHandler.getPlayerCount >= 15 { //Determines if player count is 15 or above, then returns true.
+		return true;
+		} else {
+		//returns false if player count < 15
         return false;
     }
     
     public String getServerName() {
-        return "n/a";
+        //Relies on import server.Config;
+		return Config.serverName;
     }
     
     public String getServerOS() {
-        return "n/a";
+	//Displays the operating system the server is hosted on
+        return System.getProperty("os.name"));
     }
     
     public boolean runEvaledCode(String codeToRun) {
@@ -52,7 +58,9 @@ public class syilonCore {
     }
     
     public int getPlayersOnline() {
-        return 0;
+	//Relies on PlayerHandler import
+	//Displays how many players are online
+        return PlayerHandler.getPlayerCount;
     }
     
     public boolean phoneCnC() {
